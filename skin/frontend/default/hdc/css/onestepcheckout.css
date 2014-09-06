@@ -1,0 +1,255 @@
+/* Checkout */
+#onestepcheckout-form .group-select {
+    padding-top: 0 !important;
+}
+h1.onestepcheckout-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: none;
+    margin-bottom: 10px;
+    font-family: "Myriad Pro", Arial, sans-serif;
+    color:#000
+}
+p.onestepcheckout-description {
+    font-size: 14px;
+    line-height: 22px;
+    font-family: "Arial", "Helvetica", sans-serif;
+    font-weight:normal;
+    color: #484848;
+    padding-bottom: 38px;
+}
+
+div.onestepcheckout-threecolumns div.onestepcheckout-column-left,
+div.onestepcheckout-threecolumns div.onestepcheckout-column-middle,
+div.onestepcheckout-threecolumns div.onestepcheckout-column-right {
+    width: 280px;
+}
+
+div.onestepcheckout-threecolumns div.onestepcheckout-column-right {
+    background: none;
+    padding: 0 0 0 20px;
+    width: 280px;
+}
+
+#onestepcheckout-form {
+    float:left;
+    width:100%;
+}
+
+div.onestepcheckout-threecolumns div.onestepcheckout-column-right div.onestepcheckout-summary {
+    padding: 0;
+    /*
+    width: 250px;
+    margin-left: -35px;
+    float: right;
+    background: url('../images/nrc/box-bg.jpg') repeat-y 0px 0px;
+    padding: 10px;
+    */
+}
+
+/*
+.onestepcheckout-summary-top {background: url('../images/nrc/box-top.jpg') no-repeat bottom left; float: right; width: 270px;}
+.onestepcheckout-summary-bottom {background: url('../images/nrc/box-bottom.jpg') no-repeat 0px 0px; float: right; width: 270px;}
+*/
+
+
+div.onestepcheckout-skin-magento .onestepcheckout-numbers {
+    margin-left: -53px;
+    min-height: 36px;
+    padding-left: 53px !important;
+    color: #000 !important;
+    font-weight: normal;
+    font-size: 16px !important;
+    padding-top: 6px !important;
+}
+div.onestepcheckout-skin-magento p.onestepcheckout-numbers-1 {
+    background: url('../images/ipad/product-step-1.png') no-repeat top left !important;
+    float:left;
+    margin-left:0;
+    width:100%;
+    font-family: "MyWebfont";
+    font-size: 16px;
+    color:#000
+}
+div.onestepcheckout-skin-magento p.onestepcheckout-numbers-2 {
+    background: url('../images/ipad/product-step-2.png') no-repeat top left !important;
+    float:left;
+    margin-left:0;
+    width:100%;
+    font-family: "MyWebfont";
+    font-size: 16px;
+    color:#000
+}
+div.onestepcheckout-skin-magento p.onestepcheckout-numbers-3 {
+    background: url('../images/ipad/product-step-3.png') no-repeat top left !important;
+    float:left;
+    margin-left:0;
+    width:100%;
+    font-family: "MyWebfont";
+    font-size: 16px;
+    color:#000
+}
+div.onestepcheckout-skin-magento p.onestepcheckout-numbers-4 {
+    background:url(../images/ipad/border_line.png) no-repeat bottom center!important;
+    float:left;
+    margin-left:0;
+    width:100%;
+    font-family: "MyWebfont";
+    font-size: 16px;
+    color:#fff!important;
+    padding-left: 4px!important;
+    margin-left: 0!important
+}
+.onestepcheckout-totals tr:first-child .title {
+    background:url(../images/ipad/border_line.png) no-repeat top center!important;
+}
+div.checkoutcontainer div.input-address-short .input-text, div.checkoutcontainer div.input-firstname .input-text, div.checkoutcontainer div.input-lastname .input-text, div.checkoutcontainer div.input-email .input-text, div.checkoutcontainer div.input-telephone .input-text, div.checkoutcontainer div.input-company .input-text, div.checkoutcontainer div.input-fax .input-text, div.checkoutcontainer div.input-password .input-text, div.checkoutcontainer div.input-middlename .input-text,
+.onestepcheckout-column-left .customer-dob .dob-day input.input-text, .onestepcheckout-column-left .customer-dob .dob-month input.input-text, .onestepcheckout-column-left .customer-dob .dob-year input.input-text {
+
+}
+div.checkoutcontainer div.input-address-short .input-text, div.checkoutcontainer div.input-firstname .input-text, div.checkoutcontainer div.input-lastname .input-text, div.checkoutcontainer div.input-email .input-text, div.checkoutcontainer div.input-telephone .input-text, div.checkoutcontainer div.input-company .input-text, div.checkoutcontainer div.input-fax .input-text, div.checkoutcontainer div.input-password .input-text, div.checkoutcontainer div.input-middlename .input-text {
+    padding: 4px;
+    width: 85%;
+}
+div.checkoutcontainer div.input-address-short, div.checkoutcontainer div.input-firstname, div.checkoutcontainer div.input-lastname, div.checkoutcontainer div.input-email, div.checkoutcontainer div.input-telephone, div.checkoutcontainer div.input-company, div.checkoutcontainer div.input-fax, div.checkoutcontainer div.input-password, div.checkoutcontainer div.input-middlename {
+    float: left;
+    width: 50%;
+}
+
+div.checkoutcontainer div.input-address .input-text, div.checkoutcontainer div.input-city .input-text, div.checkoutcontainer div.input-lastname .input-text, div.checkoutcontainer div.input-city .input-text, div.checkoutcontainer div.input-telephone .input-text, div.checkoutcontainer div.input-email .input-text {
+    width: 92%;
+    padding: 5px;
+}
+div.checkoutcontainer div.input-postcode .input-text {
+    width: 82%;
+}
+div.checkoutcontainer div.input-address, div.checkoutcontainer div.input-city, div.checkoutcontainer li.taxvat div.input-box, div.checkoutcontainer div.input-telephone, div.checkoutcontainer div.input-lastname, div.checkoutcontainer div.input-email {
+    width: 100% !important;
+}
+div.checkoutcontainer div.input-postcode {
+    width: 35%;
+}
+div.checkoutcontainer div.input-address-2 {
+    width: 36%;
+}
+div.checkoutcontainer div.input-address-2 .input-text {
+    width: 82%;
+}
+div.checkoutcontainer div.input-address-3 {
+    width: 20%;
+}
+
+.onestepcheckout-column-left .customer-dob .dob-day, .onestepcheckout-column-left .customer-dob .dob-month {
+    width: 72px;
+}
+.onestepcheckout-column-left .customer-dob .dob-day input.input-text, .onestepcheckout-column-left .customer-dob .dob-month input.input-text {
+    width: 48px;
+}
+.onestepcheckout-column-left .customer-dob .dob-year input.input-text {
+    width: 112px;
+}
+.onestepcheckout-address-line {
+    margin-bottom: 0;
+}
+
+table.onestepcheckout-summary td.total, table.onestepcheckout-summary th.total {
+    width: 25%;
+}
+table.onestepcheckout-totals td.title {
+    width: 75%;
+}
+.onestepcheckout-summary th {
+    border-top: 0;
+    font-size: 15px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+.onestepcheckout-totals td, .onestepcheckout-summary td {
+    border-bottom: none;
+    padding-top: 10px;
+}
+.onestepcheckout-totals {
+    margin-top: 10px;
+}
+
+.onestepcheckout-column-right-holder {
+    padding: 20px;
+    margin-top: 8px;
+}
+
+.onestepcheckout-summary td.name {
+    padding-left: 20px;
+}
+
+div.onestepcheckout-skin-magento .onestepcheckout-numbers {
+    text-transform: none !important;
+}
+
+button.onestepcheckout-place-order em {
+    background: url('../images/ipad/list-item-tick.png') no-repeat right center;
+}
+
+span.required {
+    color: #d50000;
+}
+
+.onestepcheckout-summary tr.bundle td {
+    padding-bottom: 8px;
+}
+.onestepcheckout-totals .grand-total td {
+    font-size: 13px;
+}
+table.onestepcheckout-totals td.title {
+    text-align: left;
+}
+.onestepcheckout-totals td.title {
+
+}
+
+.checkout-agreements a {
+    color: #fff;
+    font-family: Arial, verdana, arial, sans-serif;
+    font-size: 12px;
+    padding-right:5px
+}
+.checkout-agreements input.checkbox {
+    display: block;
+    float: right;
+    margin-bottom: 20px;
+}
+
+.onestepcheckout-column-left .checkout-footer-text, .onestepcheckout-column-middle .checkout-footer-text {
+	margin: 0px;
+    font-weight: normal !important;
+    color:#484848;
+    font-size: 12px;
+    font-family: Arial, verdana, arial, sans-serif;
+    line-height:20px
+}
+
+.checkout-footer-text {
+    color: #474747;
+    font-size: 11px;
+    margin-top: 20px;
+    margin-left: 10px;
+    line-height: 17px;
+}
+
+#checkout-payment-method-load label {
+    font-size: 12px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.onestepcheckout-place-order-loading {
+    clear: both;
+    margin-top: 40px;
+}
+.onestepcheckout-column-right .wrap-summary {
+    margin-left:0!important
+}
+#gender-radio-123, #gender-radio-124 {
+    margin-right:6px;
+    margin-top:-2px
+}
+.input-address-3 .input-text { width:60px!important}

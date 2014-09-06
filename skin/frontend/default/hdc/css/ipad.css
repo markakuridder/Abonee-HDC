@@ -1,0 +1,1078 @@
+body {
+    /* Background image to limit the width to 980px (prevent horz scroll bars on 1024x768) */
+    background: #fff url('../images/ipad/body-back.png') repeat-y center top;
+}
+body, td, th {
+    font-family: 'georgia', 'times new roman', serif;
+}
+.page {
+    background: #FFFFFF;
+    width: 980px;
+    padding: 0;
+}
+.col-main {
+    width: 716px;
+    background: url('../images/ipad/page-back.png') no-repeat top left;
+    border: 0;
+    padding: 5px;
+	border:1px solid #cccccc;
+	border-radius:8px
+}
+
+button.button span, button.onestepcheckout-button span {
+    height: 42px;
+    background-image: url('../images/ipad/button-back.png');
+    font-size: 15px;
+    font-family: "MyWebfont";
+    color: #FFFFFF;
+    line-height: 42px;
+    font-weight: normal;
+	text-shadow:1px 1px 2px #0ba804
+}
+.product-options-bottom .add-to-cart {
+    float:left;
+    margin:0;
+    padding: 0;
+    margin-left:45px
+}
+.product-options-bottom button.btn-cart span {
+    padding:0 92px 0 46px
+}
+.product-shop-options button.btn-cart span {
+
+}
+.product-shop-options .add-to-cart button.button {
+    margin-left:10px
+}
+.product-shop-options button.btn-cart span span {
+    text-align: center;
+    padding:0 120px 0 84px
+}
+.product-accessoires-voor-uw-ipad .product-shop-options button.btn-cart span span {
+    text-align: center;
+    padding:0 120px 0 110px
+}
+.product-accessoires-voor-uw-ipad .product-shop-options .add-to-cart {
+    margin-top: 20px;
+}
+button.button em{
+    background: url('../images/ipad/list-item-white.png') no-repeat right center;
+    padding-right: 24px;
+    font-style: normal;
+    display: block;
+}
+
+.cms-home .call-me-now {display: none;}
+.call-me-now {
+	position: absolute;
+	right:20px;
+	top:157px;
+}
+
+.call-me-now span {font-size: 14px; font-weight: bold;}
+.call-me-back {
+    padding: 8px 15px;
+    text-align: right;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#828282;
+    font-weight:bold;
+    font-size:12px;
+    background:url(../images/heeft_icon.gif) no-repeat left center;
+    width:258px;
+    float:right
+}
+.call-me-back strong {font-size: 14px; font-weight: bold;}
+
+
+
+.call-me-now-1 {
+    position: absolute;
+    right:20px;
+    top:157px;
+}
+
+.call-me-now-1 span {font-size: 14px; font-weight: bold;}
+.call-me-back-1 { display: none!important}
+.cms-home .call-me-back-1 {
+    padding: 8px 15px;
+    text-align: right;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#828282;
+    font-weight:bold;
+    font-size:12px;
+    background:url(../images/heeft_icon.gif) no-repeat left center;
+    width:258px;
+    float:right;
+    display: inline!important;
+}
+.call-me-back-1 strong {font-size: 14px; font-weight: bold;}
+
+.page-title h1, .page-title h2 {
+    font-size: 22px;
+}
+
+/* Header */
+.header {
+    background:url(../images/ipad/header_bg.png) no-repeat;
+    border: 0;
+    height: 95px;
+	width:980px;
+    padding: 0;
+	margin-top:10px;
+	margin-bottom:10px
+}
+.header h1, .header .logo {
+    margin-top: 33px;
+    margin-left: 25px;
+}
+.header-container {position: relative;}
+
+.header-container .steps {
+    background: url('../images/ipad/step-0.png') no-repeat left top;
+    width: 980px;
+    height: 40px;
+}
+.header-container .steps-1 { background-image: url('../images/ipad/step-1.png'); }
+.header-container .steps-2 { background-image: url('../images/ipad/step-2.png'); }
+.header-container .steps-3 { background-image: url('../images/ipad/step-3.png'); }
+.header-container .steps-4 { background-image: url('../images/ipad/step-4.png'); }
+.header-container .steps-5 { background-image: url('../images/ipad/step-5.png'); }
+.steps .step {
+    width: 183px;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #FFFFFF;
+    float: left;
+    padding-left: 22px;
+    text-shadow: #333 0px -1px 1px;;
+}
+.steps .step a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.steps .step-1 { width: 187px; }
+.steps .step-2 { width: 178px; }
+.steps .step-3 { width: 172px; }
+.steps .step-4 { width: 166px; }
+.steps .step-5 { width: 139px; }
+
+/* Footer */
+.footer-container {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.footer {
+    background:url('../images/ipad/footer-back.png') no-repeat left top;
+    border: none;
+    padding: 25px 32px;
+}
+.footer h3, .footer h2 {
+    font-size: 20px;
+    font-weight: normal;
+}
+.footer ul {
+}
+.footer ul li {
+    display: list-item;
+    background: url('../images/ipad/footer-separator.png') no-repeat left top;
+    font-size: 14px;
+}
+.footer ul li:first-child {
+	background:0
+}
+.footer ul li a {
+    padding: 13px 0 13px 17px;
+    background: url('../images/ipad/list-item.png') no-repeat left center;
+    display: block;
+    color: black;
+    text-decoration: none;
+	color:#484848;
+	font-size:14px;
+	font-family:Arial, Helvetica, sans-serif
+}
+.footer ul li a:hover {
+}
+
+
+/* Home page */
+.cms-home .main h1, .subscribers-abonnee-index .main h1 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: normal;
+    line-height: 40px;
+    line-height:40px\0/;
+    margin-top: 34px;
+	font-family: "MyWebfont";
+	color:#000;
+}
+:root .cms-home .main h1, .subscribers-abonnee-index .main h1 {height: 60px\9;}
+
+.cms-home .main h1 em, .subscribers-abonnee-index .main h1 em {
+    color: #CF0000;
+    font-style: normal;
+}
+.cms-home .main h1 .ipad, .subscribers-abonnee-index .main h1 .ipad {
+    background: url('../images/ipad/ipad-logo.png') no-repeat top center;
+    width: 136px;
+    height: 60px;
+    display: inline-block;
+    font-size: 1px;
+    text-align: left;
+    color: #eeeeee;
+}
+.cms-home .subtitle, .subscribers-abonnee-index .subtitle {
+    text-align:center;
+    font-size: 28px;
+    font-style:normal;
+    margin-top: 0;
+	color:#e01a22;
+	font-family: "MyWebfont";
+}
+
+:root .cms-home .subtitle, .subscribers-abonnee-index .subtitle { margin-top: 12px\9;}
+@media \0screen {
+    .cms-home .subtitle, .subscribers-abonnee-index .subtitle  { margin-top: 12px;}
+}
+*+html .cms-home .subtitle, .subscribers-abonnee-index .subtitle { margin-top: 12px;}
+
+.cms-home .right-col, .subscribers-abonnee-index .right-col {
+    margin-top: 30px;
+    background: url('../images/ipad/home.jpg') no-repeat;
+    padding-left: 530px;
+    min-height: 617px;
+    padding-top: 20px;
+}
+.cms-home .right-col ul {
+}
+.cms-home .right-col li {
+    background: url('../images/ipad/home-bullet.png') no-repeat top left;
+    padding-left: 36px;
+    font-size: 14px;
+	font-family: "MyWebfont";
+	color:#000;
+	font-weight:normal;
+	padding-bottom:24px
+}
+.cms-home .right-col li small {
+    font-size: 12px;
+    line-height: 12px;
+	color:#484848;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:normal
+}
+.cms-home .right-col li small em {
+    font-size: 12px;
+    line-height: 12px;
+	color:#bf2515;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:normal
+}
+.cms-home big {
+    font-size: 22px;
+	color:#e61c29;
+	font-family: "MyWebfont";
+	font-weight:normal
+}
+
+/* Subscribers / abonnees */
+.subscribers-abonnee-index .col-main p {
+    margin-bottom: 15px;
+    line-height: 20px;
+    font-size: 13px;
+}
+.subscribers-abonnee-index p.required {
+    margin: 0;
+    display: none;
+}
+.subscribers-abonnee-index .buttons-set button.button {
+    float: none;
+}
+.subscribers-abonnee-index .buttons-set {
+    width: 440px;
+    padding-left: 30px;
+    margin-top: 20px;
+}
+.subscribers-abonnee-index .fieldset {
+    padding: 20px 50px 20px 30px;
+    background: url('../images/ipad/abonnee-voucher-back.png') no-repeat top left;
+    margin: 0;
+}
+.subscribers-abonnee-index .fieldset-bottom {
+    padding-top: 1px;
+    background: url('../images/ipad/abonnee-voucher-back.png') no-repeat bottom left;
+    margin: 0;
+}
+.subscribers-abonnee-index .right-col {
+    padding-left: 485px;
+}
+
+/* 404 */
+.cms-no-route .col-main {
+    height: 350px;
+}
+.cms-no-route .std {
+    padding: 15px;
+}
+.cms-no-route h1 {
+    margin-bottom: 15px;
+}
+.cms-no-route p {
+    margin-bottom: 0.4em;
+}
+
+
+/* Product View */
+.product-view {
+
+}
+.product-view .product-img-box {
+    width: 500px;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+.product-accessoires-voor-uw-ipad .product-view {
+    width:964px;
+    float: left;
+}
+.product-accessoires-voor-uw-ipad .product-view .product-img-box {
+    width: 510px;
+
+}
+.col1-layout .product-view .product-shop {
+    width: 370px;
+    margin-right: 15px;
+    padding: 20px;
+}
+.product-accessoires-voor-uw-ipad .product-view .product-shop {
+    width: 342px;
+    margin-left: 26px;
+    padding: 20px;
+}
+.product-accessoires-voor-uw-ipad .product-shop-options .product-shop-header {
+    padding-left:0
+}
+.product-view .product-img-box .product-image {
+    border: 0;
+}
+.product-options {
+    border: 0;
+    background: none;
+    padding: 0;
+}
+.product-options dt {
+    min-height: 31px;
+    padding: 7px 0 0 65px;
+}
+.product-options dt label {
+    color:#484848;
+    font-family:'Myriad Pro', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+.product-options .options-list .label {
+    font-size: 14px;
+}
+.product-options .options-list .label small {
+    display: block;
+    font-size: 11px;
+    margin-top: 2px;
+    color:#484848;
+    font-family:'Myriad Pro', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+.product-options dd {
+    margin: 0;
+    padding: 0 0 0 65px;
+}
+.product-options dd li {
+    margin: 0 0 8px 10px;
+}
+.product-options dd li.disabled {
+    color: #999;
+}
+.product-options .price-notice {
+    display: none;
+}
+.product-options p.required {
+    display: none;
+}
+.product-options-bottom {
+    border: 0;
+}
+.product-options-bottom .add-to-cart button.button {
+    float: right;
+}
+.product-step-1 {}
+.product-step-2 {}
+.product-step-3 {}
+.product-step-4 {}
+
+.product-shop-options .product-shop-header {
+    padding: 0 0 0 65px;
+}
+.product-shop-options {
+}
+.product-view .short-description {
+    margin-top: 5px;
+}
+
+.add-to-box {
+    margin-bottom: 20px;
+}
+
+/* Product View: Abonnement */
+.product-view-abonnement .price-box {
+    display: none;
+}
+.product-view-abonnement .product-options-footer {
+    color: #000;
+    font-size: 18px;
+    text-align: left;
+    line-height: 1.5em;
+    margin: 10px 0 10px;
+    padding-top: 15px;
+    padding-left:60px;
+    font-family: "MyWebfont";
+}
+
+.product-view-abonnement .product-options-footer strong {
+    color: #e61c29;
+    font-size: 18px;
+    font-family: "MyWebfont";
+    font-weight: normal;
+}
+
+/* Product View: iPad */
+.product-view-configurable .regular-price {
+    display: none;
+}
+
+/* Product View: Grouped */
+.grouped-product {
+    padding-bottom: 15px;
+    width: 450px;
+}
+.grouped-left {
+    float: left;
+    width: 120px;
+    padding-left: 10px;
+}
+.grouped-left-inner {
+    text-align: center;
+    width: 100px;
+}
+.grouped-image {
+    margin-bottom: 8px;
+}
+.grouped-info {
+    float: left;
+    width: 372px;
+}
+.grouped-info-text {
+    height: 80px;
+    overflow: hidden;
+}
+.grouped-info-price {
+    text-align: right;
+    font-weight: bold;
+    font-size: 18px;
+}
+.grouped-info h3 {
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 6px;
+    /* margin-top: 20px; */
+    margin-top: 0;
+}
+
+.grouped-summary {
+}
+.grouped-summary li {
+    display: block;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.grouped-summary li.last {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.grouped-summary li .grouped-summary-name {
+    float: left;
+    width: 148px;
+}
+.grouped-summary li .grouped-summary-price {
+    float: left;
+    width: 90px;
+    font-weight: bold;
+    text-align: right;
+}
+.product-view-grouped .add-to-cart {
+}
+
+.contacts { font-size: 14px; font-family: Arial, verdana, arial, sans-serif; color: #484848}
+.contacts h2 {margin:0 0 20px; font-family: "MyWebfont"; font-size: 18px; color: #000}
+.contacts-index-index .buttons-set {border:0px;}
+
+.input.input-text, select, textarea {
+-moz-border-radius: 5px;
+border-radius: 5px;}
+
+.form-list input.input-text {}
+
+.product-options label em {background: url('../images/ipad/bg-tooltip.png') no-repeat 0px 0; display: inline-block; width: 19px; height: 18px; margin: 0 0 0 10px;}
+
+.page-title {border:0px;}
+.cms-bestelvoorwaarden .col-main, .cms-veelgestelde-vragen .col-main, .checkout-onepage-success .col-main {padding:20px;}
+
+.cms-veelgestelde-vragen table td {padding:5px;}
+
+.prototip {text-align: left;}
+
+.product-ipad .product-step-2 em {display: none;}
+
+.logo2 {float: right; width: 382px; height: 37px; background: url('../images/ipad/logo-handelsblad.png') no-repeat 0px 0; margin: 33px 25px 0 0;}
+
+.product-view {padding: 20px 0 0 0; float: left}
+
+.product-options label {
+    color:#484848;
+    font-family:'Myriad Pro', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+.onestepcheckout-index-index .col1-layout .col-main {padding: 20px 0 0 0;}
+
+.subtitle-options {padding: 10px 0 0 65px; display: block; margin: 10px 0 0 0; font-size: 12px; color: #484848; font-family:'Myriad Pro', Arial, Helvetica, sans-serif;}
+
+.buy-label {position: absolute; top:289px; left: 261px; display: block; background: url('../images/ipad/most-label.png') no-repeat top right; width: 75px; height: 39px; }
+
+.succes-container {width: 362px; line-height: 18px;}
+.checkout-onepage-success .page-title {margin: 0 0 0px;}
+.checkout-onepage-success .page-title h1 {font-size: 24px; font-family: "Myriad Pro", Arial, sans-serif; color: #000; font-weight: bold; padding-bottom: 30px; padding-top: 45px}
+.checkout-onepage-success .sub-title {font-size: 16px; margin: 0 0 30px 0;}
+.zeno_content .page-title h1 { font-size: 18px!important; padding-top: 0!important}
+.succes-container p {
+    font-family: 14px;
+    font-family: Arial, verdana, arial, sans-serif;
+    color: #484848;
+}
+.succes-container p a {
+    color: #e01a22;
+}
+.product-accessoires-voor-uw-ipad .product-shop-header .short-description .std {
+    font-family: "Myriad Pro", Arial, sans-serif;
+    font-size: 14px;
+    color: #484848;
+    padding-bottom: 10px;
+}
+.product-ipad .product-shop-header .short-description .std {
+    font-family: "Myriad Pro", Arial, sans-serif;
+    font-size: 14px;
+    color: #484848;
+}
+.product-abonnement .product-shop-header .short-description .std {
+    font-family: "Myriad Pro", Arial, sans-serif;
+    font-size: 14px;
+    color: #484848;
+}
+.product-shop-header .short-description .std {
+    font-family: "Myriad Pro", Arial, sans-serif;
+    font-size: 14px;
+    color: #484848;
+}
+.checkout-onepage-success .call-me-back {
+    display: none;
+}
+.ipad-promo {width: 489px; height: 730px; display: block; background: url('../images/ipad/thank.png') no-repeat top right; margin:52px -40px 0 0; }
+
+.social {
+	-webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    border:1px solid #d1d1d1;
+    padding: 13px;
+    font-size: 16px;
+    display: block;
+    float: left;
+    margin: 20px 0 0 0;}
+
+.social-sub {font-size: 13px; display: inline; float: left; margin: 4px 4px 0 0;}
+.facebook {background: url('../images/ipad/facebook.jpg') no-repeat top right; display: inline-block; width: 60px; height: 18px; float: left; margin: 5px 4px 0;}
+.twitter {display: inline-block; width: 100px; height: 23px; margin: 4px 0 0 0; float: left;}
+
+
+.std ul.list { list-style:disc outside; padding-left:1.5em; }
+.std ol.list { list-style:decimal outside; padding-left:1.5em; }
+
+
+.projaxion-logo {
+    background: url('../images/ipad/projaxion-logo.png') no-repeat top center;
+    width: 133px;
+    height: 11px;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+.amac-logo {
+    background: url('../images/ipad/amac-logo.png') no-repeat top center;
+    width: 57px;
+    height: 16px;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.copyright {
+    margin-bottom: 20px;
+    line-height: 26px;
+    text-align: right;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#484848
+}
+
+.onestepcheckout-place-order-wrapper {
+    margin-bottom: 15px;
+}
+
+.fieldset {
+    background: none;
+    border: 0;
+    padding: 0;
+}
+.fieldset .legend {
+    border: 0;
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0 0 10px;
+    padding: 0;
+    float: none;
+    background: none;
+}
+
+.default-view {
+    padding: 20px;
+}
+.buttons-set {
+    border: 0;
+    padding: 0;
+    width: 540px;
+}
+ul.top_logos li {
+	display:inline;
+	float:left;
+	padding-top:26px;
+	padding-left:44px
+}
+@font-face {
+   font-family: "MyWebfont";
+   src: url(TheSans_B2_7_.eot);
+}
+
+@font-face {
+   font-family: "MyWebfont";
+   src: url(TheSans_B2_7_.woff) format("woff");
+}
+.steps a, .step {
+	font-family: "MyWebfont";
+	font-size:14px;
+	font-weight:normal
+}
+.product-shop-header h1 {
+    font-family:'Myriad Pro', Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+}
+.product-shop-header .short-description .std p {
+    color:#484848;
+    font-family:'Myriad Pro', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+}
+.product-ipad #product-options-wrapper dd label {
+    padding-left:6px;
+    float:left;
+    line-height:14px
+}
+
+.cms-home .call-me-back {
+    display:none!important;
+}
+.wrap-group {
+    float:left;
+    width:510px
+}
+.wrap-group .grouped-product-top {
+    background: url(../images/ipad/top_1.png) no-repeat;
+    width:  510px;
+    height: 6px;
+    float: left;
+}
+.wrap-group .grouped-product {
+    background: url(../images/ipad/mid_1.png) repeat-y;
+    width:  510px;
+    float: left;
+    padding-top:15px
+}
+.wrap-group .grouped-product-bottom {
+    background: url(../images/ipad/bottom_1.png) no-repeat;
+    width:  510px;
+    height: 8px;
+    float: left;
+    margin-bottom:15px
+}
+.grouped-info-text {
+    float:left;
+    width:272px
+}
+.grouped-info-text h3 {
+    font-size: 16px;
+    color: #000;
+    font-family: "MyWebfont";
+    font-weight:normal;
+    padding-top:10px
+}
+.grouped-info-text .std {
+    font-size: 12px;
+    color: #484848;
+    font-family: "MyWebfont";
+    font-weight:normal;
+    line-height:26px
+}
+.grouped-info-price {
+    float:left;
+    width: 92px;
+    font-size: 18px;
+    color: #000;
+    font-family: "MyWebfont";
+    font-weight: normal;
+    padding-top: 35px;
+}
+.grouped-info-price .price {
+    font-weight: normal;
+}
+.grouped-product label {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #484848;
+}
+.wrap-summary {
+    width: 341px;
+    float: left;
+    margin-bottom: 20px;
+}
+.wrap-summary .wrap-summarytop {
+    background:url(../images/ipad/grey_top.png) no-repeat;
+    width:341px;
+    height: 8px;
+    float: left;
+}
+.wrap-summary .grouped-summary {
+    background:url(../images/ipad/grey_mid.png) repeat-y;
+    width:311px;
+    float: left;
+    font-size: 13px;
+    padding: 10px 15px 15px 15px;
+    padding-bottom: 0;
+}
+.wrap-summary .grouped-summary h1 {
+    font-family: "MyWebfont";
+    font-size: 16px;
+    color: #fff;
+    background:url(../images/ipad/border_line.png) no-repeat bottom left;
+    padding-bottom:20px
+}
+.wrap-summary .grouped-summary .grouped-summary-name {
+     font-family: Arial, Helvetica, sans-serif;
+     color: #fff;
+     font-size: 12px;
+     font-weight: normal;
+ }
+.wrap-summary .grouped-summary .grouped-summary-price {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: right;
+    float:right
+}
+.wrap-summary .wrap-summarybottom {
+    background:url(../images/ipad/grey_bottom.png) no-repeat;
+    width:341px;
+    height: 8px;
+    float: left;
+}
+.summary-last {
+    float:left;
+    width:302px;
+    margin-left: 10px;
+}
+.summary-last .summary-top {
+    float:left;
+    width:302px;
+    height:5px;
+    background:url(../images/ipad/dark_1.png) no-repeat;
+}
+.summary-last .summary-mid {
+    float:left;
+    width:282px;
+    background:url(../images/ipad/dark_2.png) repeat-y;
+    padding:10px;
+}
+.summary-last .summary-mid  .grouped-summary-name {
+    font-size: 11px;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    padding-top:4px;
+    padding-left:0!important
+
+}
+.summary-last .summary-mid  .grouped-summary-price {
+    font-size: 16px;
+    padding-right:0!important;
+    width:130px
+}
+.summary-last .summary-bottom {
+    float:left;
+    width:302px;
+    height:5px;
+    background:url(../images/ipad/dark_3.png) no-repeat;
+}
+.verz {
+    float: left;
+    background:url(../images/ipad/border_line.png) no-repeat top center;
+    padding-top:20px;
+    width:100%;
+}
+.grouped-summary-name {
+    padding-left:10px
+}
+.grouped-summary-price {
+    padding-right:10px
+}
+.noor {
+    padding-top:20px;
+    background:url(../images/ipad/border_line.png) no-repeat bottom center;
+    float:left;
+    padding-bottom:20px;
+    width:100%
+}
+.noor .grouped-summary-name, .noor .grouped-summary-name strong {
+    font-size:12px;
+    font-weight:normal!important
+}
+.noor .grouped-summary-price {
+    font-size: 16px;
+}
+.veelgest {
+    float:left;
+    width:520px;
+}
+.veelgest p {
+    font-size:14px;
+    color: #484848;
+    font-family: Arial, verdana, arial, sans-serif;
+    font-weight:normal;
+}
+.veelgest ul {
+    padding-top:25px;
+    float: left;
+    width: 520px;
+}
+.veelgest .veelgest-top {
+    float:left;
+    width:520px;
+    background:url(../images/ipad/pop_1.png) no-repeat;
+    height:6px
+ }
+.veelgest .veelgest-mid {
+    float:left;
+    width:500px;
+    background:url(../images/ipad/pop_2.png) repeat-y;
+    padding:10px
+}
+.veelgest-mid h1 {
+    font-size:14px;
+    color: #484848;
+    font-family: "MyWebfont";
+    font-weight:normal;
+}
+.veelgest ul li {
+    padding-bottom: 10px;
+    float: left;
+    width: 520px;
+}
+.veelgest-mid p {
+    font-size:14px;
+    color: #484848;
+    font-family: Arial, verdana, arial, sans-serif;
+    font-weight:normal;
+}
+.veelgest .veelgest-bottom {
+    float:left;
+    width:520px;
+    background:url(../images/ipad/pop_3.png) no-repeat;
+    height:8px
+}
+.cms-contact-us .call-me-back {
+    display: none;!important
+}
+.contact-pop_content iframe {
+    top:5%!important;
+    position: absolute;
+    left:10%;
+    height:540px!important
+}
+
+.contacts .form-list .fields .field {
+    float:left;
+    width: 270px;
+}
+.contacts .form-list input.input-text {
+    width:239px;
+    height:25px;
+    border-radius: 0;
+    border:1px solid #d1d1d1;
+    padding: 0 0 0 10px!important;
+}
+.contacts .form-list textarea {
+    border-radius: 0;
+    border:1px solid #d1d1d1;
+    padding: 10px 0 0 10px!important;
+}
+.contacts .form-list .required, .contacts .form-list label {
+    font-size: 13px;
+    font-weight: normal!important;
+    color: #484848;
+}
+#contactForm .buttons-set {
+    margin-top:-5px
+}
+#contactForm .buttons-set p.required {
+    font-size: 11px;
+    font-style: italic;
+    color: #777777;
+    text-align: left;
+}
+#contactForm .buttons-set p.required em {
+   color:red;
+}
+#contactForm button.button span {
+
+}
+#contactForm button.button span span {
+    padding:0 108px 0 92px
+}
+
+.grand_total {
+    float:left;
+    width:302px;
+    margin-left: 5px;
+}
+.grand_total .grand_total_1 {
+    float:left;
+    width:302px;
+    height:5px;
+    background:url(../images/ipad/dark_1.png) no-repeat;
+}
+.grand_total .grand_total_2 {
+    float:left;
+    width:282px;
+    background:url(../images/ipad/dark_2.png) repeat-y;
+    padding:10px;
+}
+.grand_total .grand_total_2 .grouped-summary-name {
+    font-size: 11px;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    padding-top:4px;
+    padding-left:0!important
+
+}
+.grand_total .grand_total_2 .grouped-summary-price {
+    font-size: 16px;
+    padding-right:0!important
+}
+.grand_total .grand_total_3 {
+    float:left;
+    width:302px;
+    height:5px;
+    background:url(../images/ipad/dark_3.png) no-repeat;
+}
+
+.onestepcheckout-summary tr.bundle {
+    background:url(../images/ipad/border_line.png) no-repeat bottom center;
+}
+
+
+.onestepcheckout-summary tr.bundle td.name {
+     font-family: Arial, Helvetica, sans-serif;
+     color: #fff;
+     font-size: 12px;
+     font-weight: normal;
+     padding-bottom:20px
+ }
+.onestepcheckout-summary tr.bundle td {
+    padding-top:20px
+}
+.onestepcheckout-summary tr.bundle td.name strong {
+    font-weight: normal;
+}
+.onestepcheckout-summary tr td.name {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    font-size: 12px;
+    font-weight: normal;
+}
+.onestepcheckout-summary tr td.total {
+     font-family: Arial, Helvetica, sans-serif;
+     color: #fff;
+     font-size: 12px;
+     font-weight: bold;
+     text-align: right;
+     padding-right:10px
+ }
+.onestepcheckout-summary tr td.total span {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff!important;
+}
+.shipping_2 .grouped-summary-name {
+     padding-left:20px;
+     padding-top: 10px;
+    float: left;
+ }
+.shipping_2 .grouped-summary-price {
+    padding-top: 10px;
+    float: right;
+}
+.onestepcheckout-totals tr.grand-total {
+    background: none!important;
+}
+.onestepcheckout-index-index button.onestepcheckout-button span span {
+    text-align: center;
+    padding:0 90px 0 90px
+}
+.last-label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #828282;
+    float: left;
+    margin-top: -10px;
+}
+.product-ipad .super-attribute-select input { margin: 0 0 10px 10px!important; float:left}
+#billing_address .input-text { margin-top:6px; float: left}
+.customer-dob .input-text { color: #C3C3C3}
+.custom_end { float: left; width: 100%; font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #777777; font-style: italic; padding-top:32px}
+.custom_end em { color: #e61c29; padding-right:2px}
