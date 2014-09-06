@@ -1,0 +1,11 @@
+<?php
+
+class Crimsonwing_Subscribers_Model_Subscribers extends Mage_Core_Model_Abstract
+{
+
+    protected function _construct()
+    {
+        $this->_init('subscribers/subscribers');
+    }
+
+}

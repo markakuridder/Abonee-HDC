@@ -1,0 +1,31 @@
+<div class="footer-container">
+    <div class="footer">
+        <?php echo $this->getChildHtml() ?>
+    </div>
+</div>
+<div class="copyright">
+    <?php echo $this->getCopyright() ?>
+</div>
+
+<script>
+if (document.location.protocol === 'https:') {
+	$$('a[rel=popup]').each(function(e) {
+        var href = e.href;
+        if (href.indexOf('http:') > -1) {
+            href = href.replace('http:', 'https:');
+            e.href = href;
+        }
+    });
+
+
+	 var chref = $('contact').href;
+     if (chref.indexOf('http:') > -1) {
+         chref = chref.replace('http:', 'https:');
+         $('contact').href = chref;
+     }
+
+}
+
+//$$('.footer').first().down('ul').down();
+
+</script>

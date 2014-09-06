@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Product Flow extension
+*
+* Takes care of the flow through the website: first order a product of step 1,
+* then a product belonging to step 2, ... After the final step, go to checkout
+*
+* @category   Crimsonwing
+* @package    Crimsonwing_Productflow
+* @author     Mark van der Sanden
+*/
+-->
+<config>
+    <modules>
+        <Crimsonwing_Productflow>
+            <version>1.0.0</version>
+        </Crimsonwing_Productflow>
+    </modules>
+    <global>
+        <blocks>
+            <productflow>
+                <class>Crimsonwing_Productflow_Block</class>
+            </productflow>
+        </blocks>
+        <models>
+            <productflow>
+                <class>Crimsonwing_Productflow_Model</class>
+            </productflow>
+        </models>
+        <resources>
+            <productflow_setup>
+                <setup>
+                    <module>Crimsonwing_Productflow</module>
+                    <class>Mage_Catalog_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </productflow_setup>
+        </resources>
+        <helpers>
+            <productflow>
+                <class>Crimsonwing_Productflow_Helper</class>
+            </productflow>
+        </helpers>
+        <sales>
+            <quote>
+                <item>
+                    <product_attributes>
+                        <!-- add productflow_step to quote items (e.g. for use in shopping cart) -->
+                        <productflow_step/>
+                    </product_attributes>
+                </item>
+            </quote>
+        </sales>
+    </global>
+    <frontend>
+        <events>
+            <checkout_cart_add_product_complete>
+                <observers>
+                    <productflow_next_step>
+                        <class>productflow/observer</class>
+                        <method>processAddToCart</method>
+                    </productflow_next_step>
+                </observers>
+            </checkout_cart_add_product_complete>
+            <catalog_controller_product_view>
+                <observers>
+                    <productflow_remove_alike>
+                        <class>productflow/observer</class>
+                        <method>productView</method>
+                    </productflow_remove_alike>
+                </observers>
+            </catalog_controller_product_view>
+            <controller_action_predispatch_checkout_cart_add>
+                <observers>
+                    <productflow_allow_zero_qty>
+                        <class>productflow/observer</class>
+                        <method>allowZeroQty</method>
+                    </productflow_allow_zero_qty>
+                </observers>
+            </controller_action_predispatch_checkout_cart_add>
+            <controller_action_predispatch_checkout_cart_index>
+                <observers>
+                    <productflow_check_cart>
+                        <class>productflow/observer</class>
+                        <method>checkShoppingCartOnCart</method>
+                    </productflow_check_cart>
+                </observers>
+            </controller_action_predispatch_checkout_cart_index>
+            <!-- for onepage checkout -->
+            <controller_action_predispatch_checkout_onepage_index>
+                <observers>
+                    <productflow_check_cart>
+                        <class>productflow/observer</class>
+                        <method>checkShoppingCartOnCheckout</method>
+                    </productflow_check_cart>
+                </observers>
+            </controller_action_predispatch_checkout_onepage_index>
+            <!-- for onestep checkout -->
+            <controller_action_predispatch_onestepcheckout_index_index>
+                <observers>
+                    <productflow_check_cart>
+                        <class>productflow/observer</class>
+                        <method>checkShoppingCartOnCheckout</method>
+                    </productflow_check_cart>
+                </observers>
+            </controller_action_predispatch_onestepcheckout_index_index>
+        </events>
+    </frontend>
+    <adminhtml>
+        <translate>
+            <modules>
+                <Crimsonwing_Productflow>
+                    <files>
+                        <default>Crimsonwing_Productflow.csv</default>
+                    </files>
+                </Crimsonwing_Productflow>
+            </modules>
+        </translate>
+    </adminhtml>
+</config>

@@ -1,0 +1,33 @@
+<fieldset class="form-list">
+    <?php $_code = $this->getMethodCode(); ?>
+    <ul id="payment_form_<?php echo $_code; ?>" style="display:none">
+        <li>
+        <ul>
+            <li>
+                <div class="input-box">
+                    <div class="input_big">
+                       	<?php if (Mage::getSingleton('customer/session')->isLoggedIn()):
+                   			$customerObj = Mage::getModel('customer/customer')
+                   				->load(Mage::getSingleton('customer/session')->getCustomer()->getId());
+                   			?>
+                   			<input type="text" 
+                   				title="<?php echo $this->__('Bank Account Number') ?>" 
+                   					class="input-text required-entry validate-banknr " 
+                   						id="<?php echo $_code ?>_customer_bankaccount" 
+                   							name="payment[customer_bankaccount]" 
+                   								value="<?php echo $customerObj->getData('bank_account_nr'); ?>" />
+							<?php else:?>
+							<input type="text"  title="<?php echo $this->__('Bank Account Number') ?>" class="input-text required-entry validate-banknr" id="<?php echo $_code ?>_customer_bankaccount" name="payment[customer_bankaccount]" value="<?php echo $this->getCustomerBankaccount() ?>" />
+                   			<?php endif;?> 
+                        	
+                    </div>
+                    </br>
+                    <p class="checkout-footer-text">
+                     <?php echo $this->__('Vul hier het rekeningnummer voor incasso van het abonnementsgeld in. Deze rekening wordt bij aflevering van de iPad geverifieerd middels een pintransactie aan de deur voor de kosten voor de verzending (+ eventuele kosten voor uitbreidingen en accessoires).') ?>
+                    </p>
+                </div>
+            </li>
+        </ul>
+        </li>
+    </ul>
+</fieldset>

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Focum services connector (NRC)
+*
+* @category   Crimsonwing
+* @package    Crimsonwing_Focum
+* @author     Mark van der Sanden
+*/
+-->
+<config>
+    <modules>
+        <Crimsonwing_Focum>
+            <version>1.0.0</version>
+        </Crimsonwing_Focum>
+    </modules>
+    <global>
+        <models>
+            <focum>
+                <class>Crimsonwing_Focum_Model</class>
+            </focum>
+        </models>
+        <helpers>
+            <focum>
+                <class>Crimsonwing_Focum_Helper</class>
+            </focum>
+        </helpers>
+    </global>
+    <adminhtml>
+        <translate>
+            <modules>
+                <Crimsonwing_Focum>
+                    <files>
+                        <default>Crimsonwing_Focum.csv</default>
+                    </files>
+                </Crimsonwing_Focum>
+            </modules>
+        </translate>
+    </adminhtml>
+    <frontend>
+        <events>
+        </events>
+    </frontend>
+    <default>
+        <focum>
+            <connection>
+                <mode>test</mode>
+                <password_test backend_model="adminhtml/system_config_backend_encrypted"/>
+                <password_live backend_model="adminhtml/system_config_backend_encrypted"/>
+            </connection>
+        </focum>
+    </default>
+</config>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<layout>
+    <default>
+        <reference name="head">
+            <action method="addJs"><script>prototype/window.js</script></action>
+            <action method="addItem"><type>js_css</type><name>prototype/windows/themes/default.css</name></action>
+            <action method="addItem"><type>skin_css</type><name>popupmessage/window.css</name></action>
+            <action method="addItem"><type>skin_js</type><name>popupmessage/cms_popup.js</name></action>
+        </reference>
+        <reference name="before_body_end">
+            <block type="popupmessage/message" name="popupmessage_message" template="popupmessage/popup_message.phtml" />
+        </reference>
+    </default>
+    <page_window translate="label">
+        <label>Window</label>
+        <reference name="root">
+            <action method="setTemplate"><template>popupmessage/window.phtml</template></action>
+            <!-- Mark root page block that template is applied -->
+            <action method="setIsHandle"><applied>1</applied></action>
+        </reference>
+    </page_window>
+</layout>

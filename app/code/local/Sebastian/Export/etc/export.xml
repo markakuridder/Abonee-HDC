@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<files>
+    <file filename="export_%d%_%m%_%Y%.xml" path="/export" active="true" ftp="false"> <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:php="http://php.net/xsl">
+        <xsl:strip-space elements="OnlinePaymentType cc_type" /> 
+        <xsl:output method="xml" indent="yes" encoding="utf-8" />
+        <xsl:template match="/">
+            <AddOrders FromOrganization="Projaxion"> 
+                <xsl:for-each select="orders/order">
+                    <Order> 
+                        <xsl:attribute name="RelationNumber">
+                            <xsl:text></xsl:text>
+                        </xsl:attribute>
+                        <xsl:attribute name="AlienOrderNumber">
+                            <xsl:value-of select="order_id" />
+                        </xsl:attribute>
+                        <xsl:attribute name="InfoChannel">
+                            <xsl:text>1385</xsl:text>
+                        </xsl:attribute>
+                        <xsl:attribute name="ProjectID">
+                            <xsl:text>415</xsl:text>
+                        </xsl:attribute>
+                        <xsl:attribute name="DeliveryTermsAccept">
+                            <xsl:text>true</xsl:text>
+                        </xsl:attribute>
+                        <xsl:attribute name="order_total">
+                            <xsl:value-of select="format-number(base_grand_total, '0.00')" />
+                        </xsl:attribute>
+                        <xsl:attribute name="order_subtotal">
+                            <xsl:value-of select="format-number(base_grand_total, '0.00')" />
+                        </xsl:attribute>
+                        <OrderPayment>
+                            <xsl:attribute name="GiroBankaccountnumber">
+                                <xsl:text>0</xsl:text>
+                            </xsl:attribute>
+                            <xsl:attribute name="PaymentMethodeType">
+                                <xsl:value-of select="payment/p_m_t" />
+                            </xsl:attribute>
+                            <xsl:attribute name="OnlinePaymentType">                             
+                                 <xsl:value-of select="payment/o_p_t" />                           
+                            </xsl:attribute> 
+                            <xsl:attribute name="OrganizationID">
+                                <xsl:value-of select="payment/org_id" />
+                            </xsl:attribute>
+                            <xsl:attribute name="pspReference">
+                                <xsl:value-of select="payment/adyen_psp_reference" />
+                            </xsl:attribute>
+                        </OrderPayment>
+                        <xsl:for-each select="items/item">
+                            <xsl:if test="(product_type='simple')">
+                                <OrderPackage> 
+                                    <xsl:attribute name="PackageID">
+                                                <xsl:value-of select="sku" />
+                                    </xsl:attribute>
+                                    <xsl:attribute name="NumberOfPackages">
+                                        <xsl:text>1</xsl:text>
+                                    </xsl:attribute>                                 
+
+                                    <xsl:attribute name="IsPercentage">
+                                        <xsl:text>0</xsl:text>
+                                    </xsl:attribute>
+                                </OrderPackage>
+                             </xsl:if>
+                        </xsl:for-each>
+                        <AdditField>
+                            <xsl:attribute name="AdditFieldID">
+                                <xsl:text>960</xsl:text>
+                            </xsl:attribute>
+                            <xsl:attribute name="AdditFieldValue">
+                                <xsl:value-of select="order_id" />
+                           </xsl:attribute>
+                        </AdditField>
+                        <AdditField>
+                            <xsl:attribute name="AdditFieldID">
+                                <xsl:text>961</xsl:text>
+                            </xsl:attribute>
+                            <xsl:attribute name="AdditFieldValue">
+                                <xsl:value-of select="subscription_name" />
+                           </xsl:attribute>
+                        </AdditField>
+                         <AdditField>
+                            <xsl:attribute name="AdditFieldID">
+                                <xsl:text>962</xsl:text>
+                            </xsl:attribute>
+                            <xsl:attribute name="AdditFieldValue">
+                                <xsl:value-of select="per_price" />
+                           </xsl:attribute>
+                        </AdditField>
+                        
+                        <AdditField>
+                            <xsl:attribute name="AdditFieldID">
+                                <xsl:text>965</xsl:text>
+                            </xsl:attribute>
+                            <xsl:attribute name="AdditFieldValue">
+                                <xsl:value-of select="bank_acc_nr" />
+                           </xsl:attribute>
+                        </AdditField>
+                        
+                        <AdditField>
+                            <xsl:attribute name="AdditFieldID">
+                                <xsl:text>969</xsl:text>
+                            </xsl:attribute>
+                            <xsl:attribute name="AdditFieldValue">
+                                <xsl:value-of select="customer_dob" />
+                            </xsl:attribute>
+                        </AdditField>
+                        <Customer>
+                            <xsl:attribute name="Zipcode">
+                                <xsl:value-of select="billing/postcode" />
+                            </xsl:attribute>
+                            <xsl:attribute name="Surname">
+                                <xsl:value-of select="billing/lastname" />
+                            </xsl:attribute>
+                            <xsl:attribute name="Streetname">
+                                <xsl:value-of select="billing/street1" />
+                            </xsl:attribute>
+                            <xsl:attribute name="PhonenumberOffice">
+                                <xsl:text></xsl:text>
+                            </xsl:attribute>
+                            <xsl:attribute name="PhonenumberHome">
+                                <xsl:value-of select="translate(billing/telephone,'-. ','')" />
+                            </xsl:attribute>
+                            <xsl:attribute name="MobileNumber">
+                                <xsl:value-of select="translate(billing/telephone,'-. ','')" />
+                            </xsl:attribute>
+                            <xsl:attribute name="Initials">
+                                <xsl:value-of select="billing/firstname" />
+                            </xsl:attribute>
+                            <xsl:attribute name="InformIfNewOffers">
+                                <xsl:text>true</xsl:text>
+                            </xsl:attribute>
+                            <xsl:attribute name="Infix">
+                                <xsl:value-of select="billing/middlename" />
+                            </xsl:attribute>
+                            <xsl:attribute name="HousenumberAddition">
+                                <xsl:value-of select="billing/street3" />
+                            </xsl:attribute>
+                            <xsl:attribute name="Housenumber">
+                                <xsl:value-of select="billing/street2" />
+                            </xsl:attribute>                            
+                            <xsl:attribute name="Gender">
+                                <xsl:if test="customer_gender=123"><xsl:text>M</xsl:text></xsl:if>
+                                <xsl:if test="customer_gender=124"><xsl:text>F</xsl:text></xsl:if>
+                            </xsl:attribute>
+                            <xsl:attribute name="Email">
+                                <xsl:value-of select="customer_email" />
+                            </xsl:attribute>
+                            <xsl:attribute name="City">
+                                <xsl:value-of select="billing/city" />
+                            </xsl:attribute>
+                            <xsl:attribute name="AlienRelationNr">
+                                <xsl:text></xsl:text>
+                            </xsl:attribute>
+                        </Customer>
+                    </Order>
+                </xsl:for-each>
+            </AddOrders>
+        </xsl:template>
+    </xsl:stylesheet>
+    </file>
+</files>

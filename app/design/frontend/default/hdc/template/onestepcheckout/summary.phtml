@@ -1,0 +1,141 @@
+<?php
+$_coreHelper = $this->helper('core');
+$checkoutHelper = Mage::helper('onestepcheckout/checkout');
+?>
+
+<table class="onestepcheckout-summary">
+    <!--<thead>
+        <tr>
+            <th class="name"><?php //echo 'Product'; ?></th>
+            <th class="qty"><?php //echo $this->__('Qty'); ?></th>
+            <th class="total"><?php //echo $this->__('Price'); ?></th>
+        </tr>
+    </thead>-->
+    <?php foreach($this->getItems() as $item): ?>
+    <?php $_maandbedrag = 0; ?>
+    <tr<?php if ($item->getProduct()->getTypeId() == Mage_Catalog_Model_Product_Type::TYPE_BUNDLE):?> class="bundle"<?php endif; ?>>
+        <td class="name">
+            <?php if($item->getProduct()->isConfigurable()): ?>
+                <?php $_children = $item->getChildren(); ?>
+                <?php foreach ($_children as $_child): ?>
+                    <?php echo $_child->getProduct()->getName(); ?>
+                <?php endforeach; ?>
+            <?php elseif ($item->getProduct()->getTypeId() == Mage_Catalog_Model_Product_Type::TYPE_BUNDLE): ?>
+                <?php $_children = $item->getChildren(); ?>
+                <?php foreach ($_children as $_child): ?>
+                    <?php $_titel = $_child->getProduct()->getAttributeText('ipad_titel'); ?>
+                    <?php if ($_titel): ?>
+                        <strong><?php echo $_child->getProduct()->getAttributeText('ipad_titel'); ?></strong><br />
+                        <?php $_maandbedrag = $_child->getProduct()->getIpadMaandbedrag(); ?>
+                    <?php endif; ?>
+                    <?php echo $_child->getProduct()->getName(); ?>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <?php echo $item->getName(); ?>
+                <?php if($checkoutHelper->settings['show_custom_options']): ?>
+                    <?php $options = $item->getProduct()->getTypeInstance(true)->getOrderOptions($item->getProduct()); ?>
+                    <?php if(isset($options['options']) && count($options['options']) > 0): ?>
+                        <ul class="onestepcheckout-custom-options">
+                        <?php foreach($options['options'] as $option): ?>
+                            <li><b><?php echo $option['label'] . ':</b> ' . $option['value']; ?></li>
+                        <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
+                <?php endif; ?>
+
+            <?php endif; ?>
+        </td>
+        <!-- <td class="qty"><?php echo $item->getQty(); ?></td> -->
+        <td class="total">
+            <?php if ($_maandbedrag): ?>
+                <strong><?php echo $this->helper('checkout')->formatPrice($_maandbedrag); ?> p/m</strong><br />
+                <span style="font-family: arial, sans-serif; font-size: 8.2px; color: #666;">Automatische incasso</span>
+            <?php else: ?>
+                <?php if($checkoutHelper->settings['display_tax_included']): ?>
+                    <?php echo $this->helper('checkout')->formatPrice($this->helper('checkout')->getSubtotalInclTax($item)); ?>
+                <?php else: ?>
+                    <?php echo $this->helper('checkout')->formatPrice($item->getRowTotal()); ?>
+                <?php endif; ?>
+            <?php endif; ?>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+</table>
+
+<table class="onestepcheckout-totals">
+    <?php foreach($this->getTotals() as $total): ?>
+    <?php if(!$total->getTitle()){continue;} ?>
+    <?php //if ($total->getCode() == 'shipping') continue; ?>
+    <?php if ($total->getCode() == 'tax') continue; ?>
+    <?php if ($total->getCode() == 'subtotal') continue; ?>
+        <?php
+        $fullInfo = $total->getFullInfo();
+
+        if(!empty($fullInfo) && $checkoutHelper->settings['display_full_tax']):
+            foreach ($fullInfo as $info):
+                $rates = current($info['rates']);
+                $amount = $info['amount'];
+        ?>
+            <tr>
+                <td class="title"><?php echo $rates['title'] ?> (<?php echo $rates['percent'] ?>%)</td><td class="value"><?php echo $this->helper('checkout')->formatPrice($amount); ?></td>
+            </tr>
+        <?php endforeach;
+        endif;?>
+    <tr<?php if($total->getCode() == 'grand_total'): ?> class="grand-total"<?php endif; ?>>
+    <?php $code = $total->getCode(); ?>
+
+           <td class="title">
+               <div class="<?php echo $code ?>">
+                    <div class="<?php echo $code ?>_1"></div>
+                   <div class="<?php echo $code ?>_2">
+                       <span class="grouped-summary-name">
+                           <?php
+                           $value = $total->getValue();
+
+                           if($code == 'subtotal')    {
+                               $total_name = $this->__('Subtotal');
+                           }
+                           elseif($code == 'shipping')    {
+                               $total_name = $this->__('Shipping');
+                               // if($checkoutHelper->settings['display_tax_included'])   {
+                               $value += $this->getQuote()->getShippingAddress()->getShippingTaxAmount();
+                               // }
+                           }
+                           elseif($code == 'grand_total')    {
+                               $total_name = $this->__('Grand total');
+                           }
+                           else    {
+                               $total_name = $total->getTitle();
+                           }
+						
+	                           echo $total_name;
+
+                           ?>
+                       </span>
+                       <span class="grouped-summary-price">
+                        	<?php 
+	                        	if($total->getCode() == 'grand_total'){
+	                           		echo "<span class='total'>Totaal</span>";
+	                           } 
+                        	?>
+                           <?php echo $this->helper('checkout')->formatPrice($value); ?>
+                       </span>
+                   </div>
+                   <div class="<?php echo $code ?>_3"></div>
+               </div>
+           </td>
+
+    </tr>
+    <?php endforeach; ?>
+</table>
+<script type="text/javascript">
+//<![CDATA[
+var total = <?php echo $this->getGrandTotal();?>;
+    if(payment.reloadcallback){
+        var url = '<?php echo $this->getUrl('onestepcheckout/ajax/paymentrefresh', array('_secure'=>true)); ?>';
+        paymentrefresh(url);
+        payment.countreload = 0;
+        payment.reloadcallback = false;
+    }
+//]]>
+</script>

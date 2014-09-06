@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <tabs>
+        <crimsonwing>
+            <label>Crimsonwing</label>
+            <sort_order>110</sort_order>
+        </crimsonwing>
+    </tabs>
+    <sections>
+        <nrc translate="label" module="subscribers">
+            <groups>
+                <subscribers translate="label">
+                    <label>Existing customers</label>
+                    <sort_order>30</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <sender_email_identity translate="label">
+                            <label>Email Sender For Codes</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_email_identity</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sender_email_identity>
+                        <email_template translate="label">
+                            <label>Email Template For Codes</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_email_template</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </email_template>
+                        <invalid_voucher_code_block_id translate="label">
+                            <label>'Invalid Voucher Code' Static Block</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>popupmessage/system_config_source_cms_block</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </invalid_voucher_code_block_id>
+                    </fields>
+                </subscribers>
+            </groups>
+        </nrc>
+    </sections>
+</config>

@@ -1,0 +1,45 @@
+<div class="footer-container">
+    <div class="footer">
+        <?php echo $this->getChildHtml() ?>
+    </div>
+</div>
+<div class="copyright">
+    <?php echo $this->getCopyright() ?>
+</div>
+<!-- Begin Sitestat4 code -->
+           <script type='text/javascript'>
+           <!--
+            function sitestat(ns_l){ns_l+='&amp;ns__t='+(new Date()).getTime();ns_pixelUrl=ns_l;
+            ns_0=document.referrer;
+            ns_0=(ns_0.lastIndexOf('/')==ns_0.length-1)?ns_0.substring(ns_0.lastIndexOf('/'),0):ns_0;
+            if(ns_0.length>0)ns_l+='&amp;ns_referrer='+escape(ns_0);
+            if(document.images){ns_1=new Image();ns_1.src=ns_l;}else
+           document.write('<img src="'+ns_l+'" width="1" height="1" alt="">');}
+            if(document.cookie.indexOf('ns_Cfilter')!=-1)
+            sitestat("http://nl.sitestat.com/nrcmedia/nrch/s?teller&amp;ns_channel=nieuws_informatie <http://nl.sitestat.com/nrcmedia/nrch/s?teller&amp;ns_channel=nieuws_informatie> ");
+            //-->
+           </script>
+<!-- End Sitestat4 code -->
+
+<script>
+if (document.location.protocol === 'https:') {
+	$$('a[rel=popup]').each(function(e) {
+        var href = e.href;
+        if (href.indexOf('http:') > -1) {
+            href = href.replace('http:', 'https:');
+            e.href = href;
+        }
+    });
+
+
+	 var chref = $('contact').href;
+     if (chref.indexOf('http:') > -1) {
+         chref = chref.replace('http:', 'https:');
+         $('contact').href = chref;
+     }
+
+}
+
+//$$('.footer').first().down('ul').down();
+
+</script>

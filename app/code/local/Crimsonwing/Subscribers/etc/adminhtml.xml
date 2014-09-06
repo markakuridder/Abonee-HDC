@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+         <promo>
+            <children>
+                <nrc_subscribers_code_usage translate="title" module="salesrule">
+                    <title>Subscribers Code Usage</title>
+                    <action>subscribers/adminhtml_index/exportReport</action>
+                </nrc_subscribers_code_usage>
+            </children>
+         </promo>
+    </menu>
+        <menu>
+            <catalog module="adminhtml">
+                <children>
+                    <code module="subscribers">
+                        <title>Export Subscription Map</title>
+                        <sort_order>1000</sort_order>
+                        <action>subscribers/adminhtml_index/exportMap</action>
+                    </code>
+                </children>
+            </catalog>
+        </menu>
+</config>

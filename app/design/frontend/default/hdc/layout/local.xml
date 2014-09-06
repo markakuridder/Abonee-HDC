@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addCss"><stylesheet>css/ipad.css</stylesheet></action>
+            <action method="addItem"><type>skin_js</type><name>js/prototype.event.simulate.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/validations.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>prototip/js/prototip/prototip.js</name></action>
+            <action method="addCss"><stylesheet>prototip/css/prototip.css</stylesheet></action>
+        </reference>
+        <reference name="header">
+            <remove name="top.links"/>
+            <remove name="store_language"/>
+            <remove name="top.menu"/>
+            <remove name="top.container"/>
+            <remove name="top.search"/>
+            <block type="core/template" name="step" template="page/html/step.phtml" />
+        </reference>
+        <reference name="root">
+            <remove name="breadcrumbs"/>
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <action method="unsetChild"><name>right</name></action>
+        </reference>
+        <reference name="footer">
+            <remove name="store_switcher"/>
+            <remove name="footer_links"/>
+        </reference>
+        <reference name="content">
+            <block type="core/template" name="call_me_back" template="page/call_me_back.phtml" before="-" />
+        </reference>
+    </default>
+
+    <catalog_product_view translate="label">
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+    </catalog_product_view>
+
+    <!-- nrc -->
+    <PRODUCT_175>
+        <reference name="step">
+            <action method="setStep"><step>2</step></action>
+        </reference>
+        <reference name="product.info">
+            <action method="setTemplate"><template>catalog/product/abonnement/view.phtml</template></action>
+            <remove name="product.info.addto"/>
+        </reference>
+        <reference name="product.info.bundle">
+            <action method="setTemplate"><template>catalog/product/abonnement/view/type/bundle.phtml</template></action>
+        </reference>
+        <reference name="product.info.bundle.options">
+            <action method="addRenderer"><type>radio</type><block>nrc/abonnement_bundle_option_radio</block></action>
+        </reference>
+        <reference name="product.info.addtocart">
+            <action method="setTemplate"><template>catalog/product/abonnement/view/addtocart.phtml</template></action>
+        </reference>
+    </PRODUCT_175>
+
+    <catalog_product_view>
+        <reference name="head">
+            <action method="removeItem"><type>js</type><name>varien/configurable.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/configurable.js</name></action>
+        </reference>
+    </catalog_product_view>
+
+    <PRODUCT_TYPE_configurable>
+        <reference name="product.info">
+            <action method="setTemplate"><template>catalog/product/configurable/view.phtml</template></action>
+            <remove name="product.info.addto"/>
+        </reference>
+        <reference name="product.info.configurable">
+            <action method="setTemplate"><template>catalog/product/configurable/view/type/default.phtml</template></action>
+        </reference>
+    </PRODUCT_TYPE_configurable>
+
+    <!-- ipad -->
+    <PRODUCT_193>
+        <reference name="step">
+            <action method="setStep"><step>3</step></action>
+        </reference>
+        <reference name="product.info.addtocart">
+            <action method="setTemplate"><template>catalog/product/ipad/view/addtocart.phtml</template></action>
+        </reference>
+    </PRODUCT_193>
+
+    <!-- accessories
+    <PRODUCT_198>
+        <reference name="step">
+            <action method="setStep"><step>4</step></action>
+        </reference>
+        <reference name="product.info.addtocart">
+            <action method="setTemplate"><template>catalog/product/accessories/view/addtocart.phtml</template></action>
+        </reference>
+    </PRODUCT_198>
+     moved to product_type_grouped
+    -->
+
+    <PRODUCT_TYPE_grouped>
+        <reference name="product.info">
+            <action method="setTemplate"><template>catalog/product/grouped/view.phtml</template></action>
+        </reference>
+        <reference name="step">
+            <action method="setStep"><step>4</step></action>
+        </reference>
+        <reference name="product.info.addtocart">
+            <action method="setTemplate"><template>catalog/product/accessories/view/addtocart.phtml</template></action>
+        </reference>
+    </PRODUCT_TYPE_grouped>
+
+    <onestepcheckout_index_index>
+        <reference name="step">
+            <action method="setStep"><step>5</step></action>
+        </reference>
+        <reference name="head">
+            <action method="addCss"><stylesheet>css/onestepcheckout.css</stylesheet></action>
+            <action method="addItem"><type>skin_js</type><name>prototip/js/prototip/prototip.js</name></action>
+            <action method="addCss"><stylesheet>prototip/css/prototip.css</stylesheet></action>
+        </reference>
+    </onestepcheckout_index_index>
+
+    <sales_email_order_items>
+        <reference name="order_totals">
+            <action method="setLabelProperties"><value>colspan="1" align="right" style="padding:3px 9px"</value></action>
+            <action method="setTemplate"><template>email/order/totals.phtml</template></action>
+        </reference>
+    </sales_email_order_items>
+
+</layout>

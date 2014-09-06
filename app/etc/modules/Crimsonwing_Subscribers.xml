@@ -1,0 +1,12 @@
+<config>
+    <modules>
+        <Crimsonwing_Subscribers>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depend>
+                <Crimsonwing_Nrc/><!-- for settings tab -->
+                <Crimsonwing_PopupMessage/><!-- for messages -->
+            </depend>
+        </Crimsonwing_Subscribers>
+    </modules>
+</config>

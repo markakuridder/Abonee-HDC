@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Focum services connector (NRC)
+*
+* @category   Crimsonwing
+* @package    Crimsonwing_Focum
+* @author     Mark van der Sanden
+*/
+-->
+<config>
+    <modules>
+        <Crimsonwing_Focum>
+            <version>1.0.0</version>
+        </Crimsonwing_Focum>
+    </modules>
+    <global>
+        <models>
+            <focum>
+                <class>Crimsonwing_Focum_Model</class>
+            </focum>
+        </models>
+        <helpers>
+            <focum>
+                <class>Crimsonwing_Focum_Helper</class>
+            </focum>
+        </helpers>
+    </global>
+    <adminhtml>
+        <translate>
+            <modules>
+                <Crimsonwing_Focum>
+                    <files>
+                        <default>Crimsonwing_Focum.csv</default>
+                    </files>
+                </Crimsonwing_Focum>
+            </modules>
+        </translate>
+    </adminhtml>
+    <frontend>
+        <events>
+            <!-- onepage checkout checks -->
+            <controller_action_predispatch_checkout_onepage_saveOrder>
+                <observers>
+                    <zz_focum_check_risk>
+                        <class>focum/observer_checkout</class>
+                        <method>checkRiskOnepage</method>
+                    </zz_focum_check_risk>
+                </observers>
+            </controller_action_predispatch_checkout_onepage_saveOrder>
+            <!-- onestepcheckout checks -->
+            <!-- was: controller_action_predispatch_onestepcheckout_index_index -->
+            <!-- we don't seem to be able to control the order in which listeners are called, so create a second event -->
+            <onestepcheckout_before_save_order_2>
+                <observers>
+                    <zz_focum_check_risk>
+                        <class>focum/observer_checkout</class>
+                        <method>checkRiskOnestep</method>
+                    </zz_focum_check_risk>
+                </observers>
+            </onestepcheckout_before_save_order_2>
+        </events>
+    </frontend>
+    <default>
+        <focum>
+            <connection>
+                <mode>test</mode>
+                <password_test backend_model="adminhtml/system_config_backend_encrypted"/>
+                <password_live backend_model="adminhtml/system_config_backend_encrypted"/>
+            </connection>
+        </focum>
+    </default>
+</config>

@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Crimsonwing_Productflow>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Crimsonwing_Productflow>
+    </modules>
+</config>

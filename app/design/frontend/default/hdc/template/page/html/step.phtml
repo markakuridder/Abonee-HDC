@@ -1,0 +1,27 @@
+<?php /*
+  Beware! Product steps are different from visual steps
+*/ 
+?>
+
+<div class="steps<?php if ($this->getStep()): ?> steps-<?php echo $this->getStep(); ?><?php endif; ?>">
+    <div class="step step-1"><a href="<?php echo Mage::getBaseUrl(); ?>">1. Home</a></div>
+    <?php if ($this->getStep() > 1): ?>
+        <?php $_url = Mage::getSingleton('productflow/steps')->getProductForStep(1)->getProductUrl(); ?>
+        <div class="step step-2"><a href="<?php echo $_url; ?>">2. Kies abonnement</a></div>
+    <?php else: ?>
+        <div class="step step-2">2. Kies abonnement</div>
+    <?php endif; ?>
+    <?php if ($this->getStep() > 2): ?>
+        <?php $_url = Mage::getSingleton('productflow/steps')->getProductForStep(2)->getProductUrl(); ?>
+        <div class="step step-3"><a href="<?php echo $_url; ?>">3. Kies iPad</a></div>
+    <?php else: ?>
+        <div class="step step-3">3. Kies iPad</div>
+    <?php endif; ?>
+    <?php if ($this->getStep() > 3): ?>
+        <?php $_url = Mage::getSingleton('productflow/steps')->getProductForStep(3)->getProductUrl(); ?>
+        <div class="step step-4"><a href="<?php echo $_url; ?>">4. Kies accessoires</a></div>
+    <?php else: ?>
+        <div class="step step-4">4. Kies accessoires</div>
+    <?php endif; ?>
+    <div class="step step-5">5. Bevestiging</div>
+</div>

@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Crimsonwing_PopupMessage>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Crimsonwing_PopupMessage>
+    </modules>
+</config>

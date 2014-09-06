@@ -1,0 +1,27 @@
+<?php if ($_message = $this->getMessage()): ?>
+    <div id="zenoMessageContent" style="display: none;">
+        <div class="std">
+        <?php echo $_message; ?>
+        </div>
+    </div>
+    <script type="text/javascript">// <![CDATA[
+        function showZenoMessagePopup() {
+            win = new Window({className:'zeno tst',title:'',width:820,height:600,minimizable:false,maximizable:false,showEffectOptions:{duration:0.4},hideEffectOptions:{duration:0.4}});
+            win.setContent('zenoMessageContent');
+            win.setZIndex(100);
+            win.showCenter(true);
+        }
+        showZenoMessagePopup();
+    // ]]></script>
+<?php endif; ?>
+<?php $this->markMessageRead(); ?>
+
+    <script type="text/javascript">// <![CDATA[
+        function showContactMessagePopup() {
+            wincontact = new Window({className:'zeno contact-pop',title:'',width:580,height:600,minimizable:false,maximizable:false,showEffectOptions:{duration:0.4},hideEffectOptions:{duration:0.4}});
+            wincontact.setZIndex(100);
+            wincontact.setURL('<?php echo Mage::getUrl('',array('_secure'=>true))?>contact-us');
+            wincontact.showCenter(true);
+            wincontact.setDestroyOnClose(true);
+        }
+    // ]]></script>

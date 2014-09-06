@@ -1,0 +1,11 @@
+<config>
+    <modules>
+        <Crimsonwing_Focum>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Crimsonwing_PopupMessage/>
+            </depends>
+        </Crimsonwing_Focum>
+    </modules>
+</config>

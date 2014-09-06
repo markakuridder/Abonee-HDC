@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Popup Message functionality module
+*
+* @category   Crimsonwing
+* @package    Crimsonwing_PopupMessage
+* @author     Mark van der Sanden
+*/
+-->
+<config>
+    <modules>
+        <Crimsonwing_PopupMessage>
+            <version>1.0.0</version>
+        </Crimsonwing_PopupMessage>
+    </modules>
+    <global>
+        <models>
+            <popupmessage>
+                <class>Crimsonwing_PopupMessage_Model</class>
+            </popupmessage>
+        </models>
+        <blocks>
+            <popupmessage>
+                <class>Crimsonwing_PopupMessage_Block</class>
+            </popupmessage>
+        </blocks>
+        <page>
+            <layouts>
+                <window module="page" translate="label">
+                    <label>Window</label>
+                    <template>popupmessage/window.phtml</template>
+                    <layout_handle>page_window</layout_handle>
+                </window>
+            </layouts>
+        </page>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <Crimsonwing_PopupMessage>
+                    <file>popupmessage.xml</file>
+                </Crimsonwing_PopupMessage>
+            </updates>
+        </layout>
+        <events>
+            <!-- onepage checkout checks -->
+            <cms_page_render>
+                <observers>
+                    <popupmessage_return_empty>
+                        <class>popupmessage/observer</class>
+                        <method>applyEmptyLayout</method>
+                    </popupmessage_return_empty>
+                </observers>
+            </cms_page_render>
+        </events>
+    </frontend>
+</config>

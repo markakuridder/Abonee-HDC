@@ -1,0 +1,17 @@
+<div class="product-options-footer">
+    U betaalt: <strong><span id="nrc-maandbedrag">€ 0,00</span></strong> per maand<br />
+    Uw voordeel bedraagt: <strong><span id="nrc-voordeel">€ 0</span></strong><br />
+</div>
+
+
+<?php $_product = $this->getProduct(); ?>
+<?php $buttonTitle = $this->__('Ga verder'); ?>
+<?php if($_product->isSaleable()): ?>
+    <div class="add-to-cart">
+        <?php if(!$_product->isGrouped()): ?>
+        <input type="hidden" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
+        <?php endif; ?>
+        <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span><em><?php echo $buttonTitle ?></em></span></span></button>
+        <?php echo $this->getChildHtml('', true, true) ?>
+    </div>
+<?php endif; ?>

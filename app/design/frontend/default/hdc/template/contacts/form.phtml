@@ -1,0 +1,68 @@
+<div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+<!--div class="page-title">
+    <h1><?php // echo Mage::helper('contacts')->__('Contact Us') ?></h1>
+</div-->
+
+<div id="form_div">
+<form action="<?php echo $this->getFormAction(); ?>" id="contactForm" method="post">
+    <div class="contacts">
+        <h2 class="legend"><?php echo Mage::helper('contacts')->__('Contact') ?></h2>
+        <?php echo $this->getlayout()->createBlock('cms/block')->setBlockId('contact-message')->toHtml();?>
+        <br/>
+        <br/>
+        <ul class="form-list">
+            <li class="fields">
+                <div class="field">
+                    <label for="name" class="required"><em>*</em><?php echo Mage::helper('contacts')->__('Naam') ?></label>
+                    <div class="input-box">
+                        <input name="name" id="name" title="<?php echo Mage::helper('contacts')->__('Naam') ?>" value="<?php echo $this->htmlEscape($this->helper('contacts')->getUserName()) ?>" class="input-text required-entry" type="text" />
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="email" class="required"><em>*</em><?php echo Mage::helper('contacts')->__('E-mail Adres') ?></label>
+                    <div class="input-box">
+                        <input name="email" id="email" title="<?php echo Mage::helper('contacts')->__('E-mail Adres') ?>" value="<?php echo $this->htmlEscape($this->helper('contacts')->getUserEmail()) ?>" class="input-text required-entry validate-email" type="text" />
+                    </div>
+                </div>
+            </li>
+            <li>
+                <label for="telephone"><?php echo Mage::helper('contacts')->__('Telefoonnummer') ?></label>
+                <div class="input-box">
+                    <input name="telephone" id="telephone" title="<?php echo Mage::helper('contacts')->__('Telefoonnummer') ?>" value="" class="input-text" type="text" />
+                </div>
+            </li>
+            <li class="wide">
+                <label for="comment" class="required"><em>*</em><?php echo Mage::helper('contacts')->__('Bericht') ?></label>
+                <div class="input-box">
+                    <textarea name="comment" id="comment" title="<?php echo Mage::helper('contacts')->__('Bericht') ?>" class="required-entry input-text" cols="5" rows="3"></textarea>
+                    <br/><br/>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="buttons-set">
+        <p class="required"><em>*</em><?php echo Mage::helper('contacts')->__('Verplichte Velden') ?></p>
+        <input type="text" name="hideit" id="hideit" value="" style="display:none !important;" />
+        <button type="button" onclick="onpost()" title="<?php echo Mage::helper('contacts')->__('Verstuur') ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Verstuur') ?></span></span></button>
+    </div>
+</form>
+</div>
+<div id="message_id" style="display: none;"><?php echo $this->getlayout()->createBlock('cms/block')->setBlockId('contact-success')->toHtml();?></div>
+<script type="text/javascript">
+//<![CDATA[
+    var contactForm = new VarienForm('contactForm', true);
+//]]>
+</script>
+<script>
+function onpost() {
+	if(contactForm.validator.validate()){
+	    new Ajax.Request('<?php echo $this->getFormAction(); ?>', {
+	    	  parameters: $('contactForm').serialize(true),
+	    	  onSuccess: function(transport){
+	    		   $('form_div').hide();
+	    		    $('message_id').show();
+	    		}
+	    	});	
+	}
+}
+</script>

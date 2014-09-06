@@ -1,0 +1,36 @@
+<?php
+$_product    = $this->getProduct();
+$_attributes = Mage::helper('core')->decorateArray($this->getAllowAttributes());
+?>
+<?php if ($_product->isSaleable() && count($_attributes)):?>
+    <dl>
+    <?php foreach($_attributes as $_attribute): ?>
+        <?php $_attributeCode = $_attribute->getProductAttribute()->getAttributeCode(); ?>
+        <?php $_tooltipText = $this->getLayout()->createBlock('cms/block')->setBlockId('attribute_' . $_attributeCode)->toHtml(); ?>
+        <dt><label id="label-attribute-<?php echo $_attributeCode; ?>" class="required"><?php echo $_attribute->getLabel() ?><em>&nbsp;</em></label></dt>
+        <dd<?php if ($_attribute->decoratedIsLast){?> class="last"<?php }?>>
+            <div class="input-box super-attribute-select" id="attribute<?php echo $_attribute->getAttributeId() ?>" name="super_attribute[<?php echo $_attribute->getAttributeId() ?>]">
+                <!--
+                <select name="super_attribute[<?php echo $_attribute->getAttributeId() ?>]" id="attribute<?php echo $_attribute->getAttributeId() ?>" class="required-entry super-attribute-select">
+                    <option><?php echo $this->__('Choose an Option...') ?></option>
+                  </select>
+                -->
+              </div>
+        </dd>
+        <?php if ($_tooltipText): ?>
+            <div style="display: none;" id="attribute-tooltip-<?php echo $_attributeCode; ?>"><?php echo $_tooltipText; ?></div>
+            <script type="text/javascript">
+                new Tip('label-attribute-<?php echo $_attributeCode; ?>', $('attribute-tooltip-<?php echo $_attributeCode; ?>'), {
+                    closeButton: true,
+                    showOn: 'click',
+                    width: 300
+                });
+            </script>
+        <?php endif; ?>
+    <?php endforeach; ?>
+    </dl>
+    <span class="subtitle-options"><?php echo $this->__('Pas bij aflevering betaalt u de verzendkosten en eventuele meerprijs voor uitbreiding van uw iPad.')?></span>
+    <script type="text/javascript">
+        var spConfig = new Product.Config(<?php echo $this->getJsonConfigExt(489, 485, 2) ?>);
+    </script>
+<?php endif;?>

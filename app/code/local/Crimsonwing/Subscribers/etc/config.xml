@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<!--
+/**
+* NRC Current Subscribers extension
+*
+* @category   Crimsonwing
+* @package    Crimsonwing_Subscribers
+* @author     Mark van der Sanden
+*/
+-->
+<config>
+    <modules>
+        <Crimsonwing_Subscribers>
+            <version>1.0.1</version>
+        </Crimsonwing_Subscribers>
+    </modules>
+    <global>
+        <models>
+            <subscribers>
+                <class>Crimsonwing_Subscribers_Model</class>
+                <resourceModel>subscribers_resource</resourceModel>
+            </subscribers>
+            <subscribers_resource>
+                <class>Crimsonwing_Subscribers_Model_Resource</class>
+                <entities>
+                    <code><table>nrc_subscribers_code</table></code>
+                    <subscribers><table>subscription_map</table></subscribers>
+                </entities>
+                
+            </subscribers_resource>
+        </models>
+        <resources>
+            <subscribers_setup>
+                <setup>
+                    <module>Crimsonwing_Subscribers</module>
+                    <class>Mage_Customer_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </subscribers_setup>
+        </resources>
+        <blocks>
+        	<subscribers>
+        		<class>Crimsonwing_Subscribers_Block</class>
+        	</subscribers>
+        </blocks>
+        <helpers>
+            <subscribers>
+                <class>Crimsonwing_Subscribers_Helper</class>
+            </subscribers>
+        </helpers>
+        <events>
+            <controller_front_init_routers>
+                <observers>
+                    <subscribers>
+                        <type>singleton</type>
+                        <class>Crimsonwing_Subscribers_Controller_Router</class>
+                        <method>initControllerRouters</method>
+                    </subscribers>
+                </observers>
+            </controller_front_init_routers>
+        </events>
+        <template>
+            <email>
+                <nrc_subscribers_email_template translate="label" module="subscribers">
+                    <label>Code for existing subscriber</label>
+                    <file>subscribers/code.html</file>
+                    <type>html</type>
+                </nrc_subscribers_email_template>
+            </email>
+        </template>
+    </global>
+    <adminhtml>
+        <translate>
+            <modules>
+                <Crimsonwing_Subscribers>
+                    <files>
+                        <default>Crimsonwing_Subscribers.csv</default>
+                    </files>
+                </Crimsonwing_Subscribers>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <Crimsonwing_Subscribers>
+                    <file>subscribers.xml</file>
+                </Crimsonwing_Subscribers>
+            </updates>
+        </layout>
+    </adminhtml>
+    <frontend>
+        <routers>
+            <subscribers>
+                <use>standard</use>
+                <args>
+                    <module>Crimsonwing_Subscribers</module>
+                    <frontName>abonnee</frontName>
+                </args>
+            </subscribers>
+        </routers>
+        <layout>
+            <updates>
+                <Crimsonwing_Subscribers>
+                    <file>subscribers.xml</file>
+                </Crimsonwing_Subscribers>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Crimsonwing_Subscribers>
+                    <files>
+                        <default>Crimsonwing_Subscribers.csv</default>
+                    </files>
+                </Crimsonwing_Subscribers>
+            </modules>
+        </translate>
+        <events>
+            <checkout_cart_product_add_after>
+                <observers>
+                    <subscribers_apply_coupon>
+                        <class>subscribers/observer</class>
+                        <method>applyCouponFromSession</method>
+                    </subscribers_apply_coupon>
+                </observers>
+            </checkout_cart_product_add_after>
+            <controller_action_predispatch_customer_account_index>
+            	<observers>
+            		<redirect>
+            			<class>subscribers/observer</class>
+            			<method>redirectToSecondPage</method>
+            		</redirect>
+            	</observers>
+            </controller_action_predispatch_customer_account_index>
+        </events>
+    </frontend>
+    <default>
+        <nrc>
+            <subscribers>
+                <sender_email_identity>custom2</sender_email_identity>
+                <email_template>nrc_subscribers_email_template</email_template>
+            </subscribers>
+        </nrc>
+    </default>
+</config>

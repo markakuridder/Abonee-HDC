@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<!--
+/**
+* NRC extension
+*
+* Makes all NRC specific changes to the shop
+*
+* @category   Crimsonwing
+* @package    Crimsonwing_Nrc
+* @author     Mark van der Sanden
+*/
+-->
+<config>
+    <modules>
+        <Crimsonwing_Nrc>
+            <version>1.0.0</version>
+        </Crimsonwing_Nrc>
+    </modules>
+    <global>
+        <blocks>
+            <nrc>
+                <class>Crimsonwing_Nrc_Block</class>
+            </nrc>
+            <checkout>
+    			<rewrite>
+    				<onepage_payment_methods>Crimsonwing_Nrc_Block_Container</onepage_payment_methods>
+    			</rewrite>
+    		</checkout>
+            <catalog>
+                <rewrite>
+                    <product_view_type_configurable>Crimsonwing_Nrc_Block_Catalog_Product_View_Type_Configurable</product_view_type_configurable>
+                </rewrite>
+            </catalog>
+        </blocks>
+        <resources>
+            <nrc_setup>
+                <setup>
+                    <module>Crimsonwing_Nrc</module>
+                    <class>Mage_Catalog_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </nrc_setup>
+        </resources>
+        <helpers>
+            <nrc>
+                <class>Crimsonwing_Nrc_Helper</class>
+            </nrc>
+        </helpers>
+        <models>
+            <nrc>
+                <class>Crimsonwing_Nrc_Model</class>
+            </nrc>
+        </models>
+        <sales>
+            <quote>
+                <item>
+                    <product_attributes>
+                        <!-- add productflow_step to quote items (e.g. for use in shopping cart) -->
+                        <ipad_titel/>
+                        <ipad_maandbedrag/>
+                    </product_attributes>
+                </item>
+            </quote>
+        </sales>
+    </global>
+      <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <NrcCustomer before="Mage_Adminhtml">Crimsonwing_Nrc_Adminhtml</NrcCustomer>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <frontend>
+    	<routers>
+            <nrc>
+                <use>standard</use>
+                <args>
+                    <module>Crimsonwing_Nrc</module>
+                    <frontName>nrc</frontName>
+                </args>
+            </nrc>
+        </routers>
+		<routers>
+			<checkout>
+				<args>
+					<modules>
+						<Nrc before="Mage_Checkout">Crimsonwing_Nrc_Checkout</Nrc>
+					</modules>
+				</args>
+			</checkout>
+		</routers>
+        <events>
+            <!-- onepage checkout check -->
+            <controller_action_predispatch_checkout_onepage_saveOrder>
+                <observers>
+                    <nrc_check_previous_orders>
+                        <class>nrc/observer</class>
+                        <method>checkPreviousOrderOnepage</method>
+                    </nrc_check_previous_orders>
+                    <nrc_check_age>
+                        <class>nrc/observer</class>
+                        <method>checkBirthDateOnepage</method>
+                    </nrc_check_age>
+                </observers>
+            </controller_action_predispatch_checkout_onepage_saveOrder>
+            <!-- onestepcheckout check -->
+            <onestepcheckout_before_save_order>
+                <observers>
+                    <nrc_check_previous_orders>
+                        <class>nrc/observer</class>
+                        <method>checkPreviousOrderOnestep</method>
+                    </nrc_check_previous_orders>
+                    <nrc_check_age>
+                        <class>nrc/observer</class>
+                        <method>checkBirthDateOnestep</method>
+                    </nrc_check_age>
+                </observers>
+            </onestepcheckout_before_save_order>
+        </events>
+        <translate>
+            <modules>
+                <Crimsonwing_Nrc>
+                    <files>
+                        <default>Crimsonwing_Nrc.csv</default>
+                    </files>
+                </Crimsonwing_Nrc>
+            </modules>
+        </translate>
+	</frontend>
+</config>
